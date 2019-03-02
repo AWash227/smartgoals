@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyText
+  complete: false
+  taskable_id: 1
+  taskable_type: MyString
+
+two:
+  body: MyText
+  complete: false
+  taskable_id: 1
+  taskable_type: MyString

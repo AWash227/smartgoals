@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  complete: false
+  due_date: 2019-03-02 15:01:16
+  goal: one
+
+two:
+  title: MyText
+  complete: false
+  due_date: 2019-03-02 15:01:16
+  goal: two
