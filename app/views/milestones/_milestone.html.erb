@@ -2,11 +2,6 @@
   <%= milestone.title %> -
   <small>Submitted <%= time_ago_in_words(milestone.created_at) %> ago</small>
 
-  <%= form_for [@milestone, Task.new] do |f| %>
-      <%= f.text_area :body, placeholder: "Add a Task" %><br/>
-      <%= f.submit "Submit Task"  %>
-      <% end %>
-
   <ul>
       <%= render partial: 'tasks/task', collection: milestone.tasks %>
   </ul>

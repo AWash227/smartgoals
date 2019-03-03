@@ -1,6 +1,2 @@
 <h1>Goals</h1>
-<% @goals.each do |goal| %>
-    <p>
-        <% link_to(goal.title, target: "_blank") %> - <%= link_to("Show Page", goal) %>
-    </p>
-<% end %>
+<%= render 'goalbox' %>

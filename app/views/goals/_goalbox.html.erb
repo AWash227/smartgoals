@@ -1,0 +1,10 @@
+<div class = "block-grid-xs-2 block-grid-sm-3 block-grid-md-4">
+    <% @goals.each do |goal| %>
+        <%= link_to goal do%>
+            <div class = "goal-box col-md-4">
+                <div class = "goal-title"><%= goal.title %></div>
+                <div class = "goal-due-date"><%= goal.due_date.strftime("Reach By: %m/%d/%Y") %></div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

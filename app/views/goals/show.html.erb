@@ -1,13 +1,9 @@
-<%= link_to(@goal.title, target: "_blank") %><br/>
-<small>Submitted <%= time_ago_in_words(@goal.created_at) %> ago</small>
+<h1><%= link_to(@goal.title, target: "_blank")%><i class="fa fa-star"></i> <br/></h1>
 
-<h3>Milestones</h3>
+<div class = "timeline-wrapper">
+  <h3>Milestones</h3>
 
-<%= form_for [@goal, Milestone.new] do |f| %>
-<%= f.text_area :title, placeholder: "Add a milestone" %><br/>
-<%= f.submit "Add Milestone" %>
-<% end %>
-
-<ul>
-  <%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
-</ul>
+  <ul>
+    <%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
+  </ul>
+</div>
