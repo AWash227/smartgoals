@@ -1,10 +1,21 @@
-<div class = "block-grid-xs-2 block-grid-sm-3 block-grid-md-4">
-    <% @goals.each do |goal| %>
-        <%= link_to goal do%>
-            <div class = "goal-box col-md-4">
-                <div class = "goal-title"><%= goal.title %></div>
-                <div class = "goal-due-date"><%= goal.due_date.strftime("Reach By: %m/%d/%Y") %></div>
-            </div>
+<% goal_count = Goal.count %>
+<% row_count = (goal_count / 3.to_f).ceil.to_i %>
+<div class = "goal-container">
+        <% @goals.each_slice(3) do |goals| %>
+            <% goals.each do |goal| %>
+                <ul class = "goal-box">
+                    <%= link_to goal do%>
+                        <div class = "goal-title"><%= goal.title %></div>
+                        <div class = "goal-due-date"><%= goal.due_date.strftime("Reach By: %m/%d/%Y") %></div>
+                    <% end %>
+                    <div class= "favorited glyphicon glyphicon-star-empty "></div>
+                </ul>
+            <% end %>
         <% end %>
+    <%= link_to "goals/new" do %>
+        <div id = "add-goal">
+            <div class = "goal-title">Add new Goal</div>
+        </div>
     <% end %>
+    </div>
 </div>

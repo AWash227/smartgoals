@@ -1,8 +1,19 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
- @import "font-awesome.css";
+ @import "font-awesome";
  @import "goals.scss";
 
  h1{
      text-align: center;
+ }
+
+ 
+
+ /* glyphicons styling */
+ .glyphicon{
+     transition: transform .15s ease;
+ }
+ .glyphicon:hover{
+     transform: scale(1.15);
+     transition: transform .15s ease;
  }
