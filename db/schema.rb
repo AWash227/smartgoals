@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_200308) do
+ActiveRecord::Schema.define(version: 2019_03_04_171021) do
 
   create_table "goals", force: :cascade do |t|
     t.text "title"
     t.text "daily_action"
     t.boolean "daily_action_complete"
-    t.datetime "due_date"
+    t.date "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_03_02_200308) do
   create_table "milestones", force: :cascade do |t|
     t.text "title"
     t.boolean "complete"
-    t.datetime "due_date"
+    t.date "due_date"
     t.integer "goal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

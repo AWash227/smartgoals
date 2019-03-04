@@ -2,6 +2,11 @@
  @import "bootstrap";
  @import "font-awesome";
  @import "goals.scss";
+ @mixin box_sizing {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
 
  h1{
      text-align: center;
@@ -17,3 +22,38 @@
      transform: scale(1.15);
      transition: transform .15s ease;
  }
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    /* forms */
+    input, textarea, select, .uneditable-input {
+        border: 1px solid #bbb;
+        width: 100%;
+        margin-bottom: 15px;
+        @include box_sizing;
+    }
+
+    input {
+        height: auto !important;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

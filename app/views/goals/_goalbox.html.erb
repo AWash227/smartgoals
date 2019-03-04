@@ -3,18 +3,17 @@
 <div class = "goal-container">
         <% @goals.each_slice(3) do |goals| %>
             <% goals.each do |goal| %>
-                <ul class = "goal-box">
+                <div class = "goal-box">
                     <%= link_to goal do%>
                         <div class = "goal-title"><%= goal.title %></div>
-                        <div class = "goal-due-date"><%= goal.due_date.strftime("Reach By: %m/%d/%Y") %></div>
+                        <div class = "goal-due-date"><%= goal.due_date %></div>
                     <% end %>
-                    <div class= "favorited glyphicon glyphicon-star-empty "></div>
-                </ul>
+                </div>
             <% end %>
         <% end %>
     <%= link_to "goals/new" do %>
-        <div id = "add-goal">
-            <div class = "goal-title">Add new Goal</div>
+        <div class = "goal-box" id = "add-goal">
+            <div class = "goal-title glyphicon glyphicon-plus"></div>
         </div>
     <% end %>
     </div>
