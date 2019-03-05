@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_171021) do
+ActiveRecord::Schema.define(version: 2019_03_04_204002) do
 
   create_table "goals", force: :cascade do |t|
     t.text "title"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_171021) do
 
   create_table "milestones", force: :cascade do |t|
     t.text "title"
-    t.boolean "complete"
+    t.boolean "complete", default: false
     t.date "due_date"
     t.integer "goal_id"
     t.datetime "created_at", null: false

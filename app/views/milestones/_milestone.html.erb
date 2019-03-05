@@ -1,9 +1,17 @@
-<li>
-  <%= milestone.title %> -
-  <small>Submitted <%= time_ago_in_words(milestone.created_at) %> ago</small>
-
-  <ul>
-      <%= render partial: 'tasks/task', collection: milestone.tasks %>
-  </ul>
-
-</li>
+<div id = "milestone">
+  <div class = "top">
+    <div class = "milestone-title"><%= milestone.title %></div>
+    <div class = "milestone-date"><small>Due by: <%= milestone.due_date %></small></div>
+  </div>
+  <div class = "bottom">
+    <%= link_to edit_goal_milestone_path(@goal, milestone) do %> 
+    <i class = "glyphicon glyphicon-pencil"></i>
+    <% end %>
+    <%= link_to goal_milestone_path(@goal, milestone),  :method => :delete, :confirm => "Are you sure?" do %>
+      <i class = "glyphicon glyphicon-remove"></i> 
+      <% end %> 
+      </div>
+    </div>
+<ul>
+    <%= render partial: 'tasks/task', collection: milestone.tasks %>
+</ul>

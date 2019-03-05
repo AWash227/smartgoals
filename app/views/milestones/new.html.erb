@@ -1,0 +1,10 @@
+<h1>Add new milestone </h1>
+<%= form_for [@goal, Milestone.new] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :due_date %>
+    <%= f.date_field :due_date %>
+
+    <%= f.submit "Create Milestone", class: "btn btn-primary"%>
+<% end %>

@@ -1,13 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  title: MyText
-  daily_action: MyText
+test_goal:
+  title: testing goal
+  daily_action: test
   daily_action_complete: false
-  due_date: 2019-03-02 14:55:29
-
-two:
-  title: MyText
-  daily_action: MyText
-  daily_action_complete: false
-  due_date: 2019-03-02 14:55:29
+  due_date: 2019-03-02

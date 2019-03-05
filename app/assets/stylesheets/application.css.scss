@@ -2,14 +2,21 @@
  @import "bootstrap";
  @import "font-awesome";
  @import "goals.scss";
+ @import "milestones.scss";
  @mixin box_sizing {
      -moz-box-sizing: border-box;
      -webkit-box-sizing: border-box;
      box-sizing: border-box;
  }
+ $h1-font-color: #424242;
+ $xxs-h1-font-size: 42px;
 
  h1{
      text-align: center;
+     color: $h1-font-color;
+    a{
+        color: $h1-font-color;
+    }
  }
 
  
@@ -25,6 +32,9 @@
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
+    h1{
+        font-size: $xxs-h1-font-size;
+    }
     /* forms */
     input, textarea, select, .uneditable-input {
         border: 1px solid #bbb;

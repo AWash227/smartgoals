@@ -1,3 +1,9 @@
+$h3-text-color: #757575;
+$xxs-h3-text: 32px;
+h3 {
+    text-align: center;
+    color: $h3-text-color;
+}
 .goal-container{
     display: grid;
     margin: 25px;
@@ -61,6 +67,9 @@
     }
     /* Custom, iPhone Retina */ 
     @media only screen and (min-width : 320px) {
+        h3{
+            font-size: $xxs-h3-text;
+        }
         .goal-container{
             grid-template-columns: repeat(1, 1fr);
             margin: 15px;
