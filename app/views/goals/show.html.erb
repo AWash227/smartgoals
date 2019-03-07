@@ -1,12 +1,38 @@
-<h1><%= link_to(@goal.title, target: "_blank")%></h1>
-<div class = "timeline-wrapper">
-  <h3>Milestones</h3>
-  <div>
-    <%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
+<!-- Hero Section -->
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @goal.title %>
+      </h1>
+      <h2 class="subtitle">
+        <%= @goal.daily_action %>
+      </h2>
+    </div>
   </div>
-  <div id = "add-milestone">
-    <%= link_to new_goal_milestone_path(@goal) do %>
-    <i class = "glyphicon glyphicon-plus" ></i>
-    <% end %>
+</section>
+<br>
+
+<!-- Layout with main content and right sidebar -->
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-child">
+      <%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
+      <div id = "add-milestone">
+        <%= link_to new_goal_milestone_path(@goal) do %>
+        <i class = "glyphicon glyphicon-plus" ></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Sidebar -->
+  <div class="tile is-4 is-parent is-vertical">
+    <article class="tile is-child notification is-notification">
+      <div class="content">
+        <p class="title">Quick-Add</p>
+        
+      </div>
+    </article>
   </div>
 </div>

@@ -1,9 +1,14 @@
-<li>
-  <%= task.body %> -
-  <small>Submitted <%= time_ago_in_words(task.created_at) %> ago</small>
+<article class="media">
+  <figure class="media-left">
+      <input type="checkbox">
 
-  <ul>
-      <%= render partial: 'tasks/task', collection: task.tasks %>
-  </ul>
-
-</li>
+  </figure>
+  <div class="media-content">
+    <div class = "content">
+      <p>
+        <%= task.body %>
+      </p>
+    </div>
+    <%= render partial: 'tasks/task', collection: task.tasks %>
+  </div>
+</article>

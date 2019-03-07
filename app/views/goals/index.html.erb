@@ -1,2 +1,22 @@
-<h1>Goals</h1>
-<%= render 'goalbox' %>
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Goals
+            </h1>
+            <h2 class="subtitle">
+                Where you plan a better life.
+            </h2>
+        </div>
+    </div>
+</section>
+<br>
+<section class="section">
+    <div class = "columns is-multiline is-mobile">
+        <% @goals.each do |goal| %>
+            <div class = "column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-flexible">
+                <%= render 'goal', goal: goal %>
+            </div>
+        <% end %>
+    </div>
+</section>
