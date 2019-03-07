@@ -7,32 +7,30 @@
       </h1>
       <h2 class="subtitle">
         <%= @goal.daily_action %>
+        <%= link_to edit_goal_path(@goal) do%>
+        <span class="icon">
+          <%= fa_icon "edit"%>
+        </span>
+        <% end %>
       </h2>
+        <div class="container">
+            <%= link_to new_goal_milestone_path(@goal) do%>
+                <span class = "icon">
+                <%= fa_icon "plus-circle"%>
+                </span>
+                Add a Milestone
+            <% end %>
+        </div>
     </div>
   </div>
 </section>
+
 <br>
 
-<!-- Layout with main content and right sidebar -->
-<div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <div class="tile is-child">
-      <%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
-      <div id = "add-milestone">
-        <%= link_to new_goal_milestone_path(@goal) do %>
-        <i class = "glyphicon glyphicon-plus" ></i>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <!-- Right Sidebar -->
-  <div class="tile is-4 is-parent is-vertical">
-    <article class="tile is-child notification is-notification">
-      <div class="content">
-        <p class="title">Quick-Add</p>
-        
-      </div>
-    </article>
-  </div>
+<!-- Render Milestones and Tasks -->
+<%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
+<div id = "add-milestone">
+  <%= link_to new_goal_milestone_path(@goal) do %>
+  <i class = "glyphicon glyphicon-plus" ></i>
+  <% end %>
 </div>

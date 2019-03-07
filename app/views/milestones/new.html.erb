@@ -1,10 +1,15 @@
-<h1>Add new milestone </h1>
-<%= form_for [@goal, Milestone.new] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :due_date %>
-    <%= f.date_field :due_date %>
-
-    <%= f.submit "Create Milestone", class: "btn btn-primary"%>
-<% end %>
+<section class="hero is-link is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Create a New Milestone
+      </h1>
+      <h2 class="subtitle">
+        Make it challenging. You'll break this down further.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class = "section">
+    <%= render 'form';%>
+</section>

@@ -1,12 +1,14 @@
 class MilestonesController < ApplicationController
     before_action :find_goal
     def new
-        @milestone = Milestone.new
+        @goal = Goal.find(params[:goal_id])
+        @milestone = @goal.milestones.new 
     end
 
 
     def create
-        @milestone = @goal.milestones.new (milestone_params)
+        @goal = Goal.find(params[:goal_id])
+        @milestone = @goal.milestones.create (milestone_params)
 
         if @milestone.save
             redirect_to @goal, notice: 'Your milestone has been added!'

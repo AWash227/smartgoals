@@ -1,0 +1,37 @@
+<!-- Surround in box -->
+<div class = "box">
+    <!-- Input form for @Goal -->
+    <%= form_for @goal do |f|%>
+        <!-- Title -->
+        <div class="field">
+            <%= f.label :title, class: "label"%>
+            <div class="control">
+                <%= f.text_field :title, class: "input"%>
+            </div>
+        </div>
+
+        <!-- Due Date -->
+        <div class="field">
+            <%= f.label :due_date, class: "label"%>
+            <div class="control">
+                <%= f.date_field :due_date, class:"input"%>
+            </div>
+        </div>
+
+        <!-- Daily Action -->
+        <div class="field">
+        <%= f.label :daily_action, class: "label"%>
+            <div class="control">
+                <%= f.text_field :daily_action, class: "input"%>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="field">
+            <%= f.submit "Submit", class: "button is-link"%>
+            <%= link_to @goal do%>
+                <button class="button is-text">Cancel</button>
+            <% end %>
+        </div>
+    <% end %>
+</div>

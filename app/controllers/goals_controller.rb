@@ -14,6 +14,10 @@ class GoalsController < ApplicationController
             render 'new'
         end
     end
+
+    def edit
+        @goal = Goal.find(params[:id])
+    end
     def show
         @goal = Goal.find(params[:id])
     end

@@ -1,0 +1,25 @@
+<div class="box">
+    <%= form_for [@goal, @milestone] do |f| %>
+        <div class="field">
+            <%= f.label :title, class: "label"%>
+            <div class="control">
+                <%= f.text_field :title, class: "input"%>
+            </div>
+        </div>
+
+        <div class="field">
+            <%= f.label :due_date, class: "label"%>
+            <div class="control">
+                <%= f.date_field :due_date, class: "input"%>
+            </div>
+        </div>
+
+
+        <div class="field">
+            <%= f.submit "Submit", class: "button is-link"%>
+            <%= link_to @goal do%>
+                <button class="button is-text">Cancel</button>
+            <% end %>
+        </div>
+    <% end %>
+</div>
