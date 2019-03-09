@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  /*
   // Get all "add-child-task" buttons on page
   const $childTasks = Array.prototype.slice.call(document.querySelectorAll('.add-child-task'), 0);
 
@@ -56,4 +57,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-});
+}); */

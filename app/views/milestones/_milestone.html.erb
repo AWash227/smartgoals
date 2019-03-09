@@ -1,35 +1,49 @@
-<section class = "section">
-  <div class="box">
-    <div class="level">
-      <div class="level-left">
-        <div class="level-item">
-          <div class="container">
-            <h1 class = "title"><%= milestone.title %></h1><br>
-            <h2 class = "subtitle"><%= milestone.due_date %></h2>
-          </div>
+<!-- Milestone Section -->
+<section class = "section" id="milestone">
+    <div class="box" style="border-top: 2px solid hsl(348, 100%, 61%);">
+      <div class="columns">
+        <div class="column is-four-fifths">
+            <div class="container">
+              <%= link_to milestone, goal_id: milestone.goal do%>
+              <h1 class = "title is-5"><%= milestone.title %></h1>
+              <h2 class = "subtitle is-6"><%= milestone.due_date %></h2>
+              <% end %>
+            </div>
         </div>
-        <div class="level-item">
-        </div>
-      </div>
-      <div class="level-right">
-        <div class="level-item">
+        <div class="column is-one-fifth">
           <%= link_to edit_goal_milestone_path(@goal, milestone) do %>
             <span class="icon">
               <%= fa_icon "edit"%>
             </span>
           <% end %>
-        </div>
-        <div class="level-item">
           <%= link_to goal_milestone_path(@goal, milestone), method: :delete, confirm: "Are You Sure?" do %>
             <span class="icon">
               <%= fa_icon "trash"%>
             </span>
           <% end %>
         </div>
-      </div>
-  </div>
-  </div>
+    </div>
 </section>
-<section class = "section">
-  <%= render partial: 'tasks/task', collection: milestone.tasks %>
+
+<!-- Tasks Section -->
+<section class = "section" id="milestone-tasks">
+  <section class = "section">
+    <div class="box" style="border-top: 2px solid hsl(141, 71%, 53%);">
+      <div class="level is-mobile">
+        <div class="level-left">
+          <div class="subtitle">Tasks</div>
+        </div>
+        <div class="level-right">
+          <%= link_to new_milestone_task_path(milestone) do %>
+            <span class="icon">
+              <%= fa_icon "plus-circle"%>
+            </span>
+          <% end %>
+        </div>
+      </div>
+      <section class = "section">
+        <%= render partial: 'tasks/task', collection: milestone.tasks %>
+      </div>
+    </section>
+  </section>
 </section>

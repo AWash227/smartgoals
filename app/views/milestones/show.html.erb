@@ -1,0 +1,38 @@
+<!-- Hero Section -->
+<section class="hero is-danger is-bold">
+    <%= link_to @milestone.goal, style: "padding-top: 15px; padding-left: 15px" do %>
+      <span class="icon is-medium">
+        <%= fa_icon "angle-left", class: "fa-2x"%>
+      </span>
+    <% end %>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @milestone.title %>
+      </h1>
+      <h2 class="subtitle">
+        <%= @milestone.due_date %>
+        <%= link_to edit_goal_milestone_path(@milestone.goal, @milestone) do%>
+        <span class="icon">
+          <%= fa_icon "edit"%>
+        </span>
+        <% end %>
+      </h2>
+        <div class="container">
+            <%= link_to new_milestone_task_path(@milestone) do%>
+                <span class = "icon">
+                <%= fa_icon "plus-circle"%>
+                </span>
+                Add a Task
+            <% end %>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Show all Tasks -->
+<section class="section">
+  <div class="box">
+    <%= render partial: 'tasks/task', collection: @milestone.tasks %>
+  </div>
+</section>

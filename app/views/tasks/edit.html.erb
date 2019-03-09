@@ -1,0 +1,20 @@
+<!-- Hero Section -->
+<section class="hero is-success is-bold">
+    <%= link_to @task.milestone, style: "padding-top: 15px; padding-left: 15px" do %>
+      <span class="icon is-medium">
+        <%= fa_icon "angle-left", class: "fa-2x"%>
+      </span>
+    <% end %>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Edit Your Task
+      </h1>
+      <h2 class="subtitle">
+        Make sure it has a clear "finished" state.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<%= render 'form'%>

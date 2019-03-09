@@ -18,9 +18,21 @@ class GoalsController < ApplicationController
     def edit
         @goal = Goal.find(params[:id])
     end
+
+    def update
+        @goal = Goal.find(params[:id])
+        if @goal.update_attributes(goal_params)
+            redirect_to @goal
+        else
+            render 'edit'
+        end
+    end
+
     def show
         @goal = Goal.find(params[:id])
+        @milestones = @goal.milestones
     end
+
 
     private
 

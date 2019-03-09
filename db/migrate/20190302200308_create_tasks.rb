@@ -3,9 +3,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     create_table :tasks do |t|
       t.text :body
       t.boolean :complete
-      t.integer :taskable_id
-      t.string :taskable_type
-
+      t.references :milestone, foreign_key: true
       t.timestamps
     end
   end

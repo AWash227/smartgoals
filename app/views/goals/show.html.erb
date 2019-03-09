@@ -28,9 +28,4 @@
 <br>
 
 <!-- Render Milestones and Tasks -->
-<%= render(partial: 'milestones/milestone', collection: @goal.milestones) %>
-<div id = "add-milestone">
-  <%= link_to new_goal_milestone_path(@goal) do %>
-  <i class = "glyphicon glyphicon-plus" ></i>
-  <% end %>
-</div>
+<%= render(partial: 'milestones/milestone', collection: @milestones) %> </div>

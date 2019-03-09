@@ -1,0 +1,24 @@
+<!-- Hero Section -->
+<section class="hero is-success is-bold">
+    <%= link_to @task.milestone, style: "padding-top: 15px; padding-left: 15px" do %>
+      <span class="icon is-medium">
+        <%= fa_icon "angle-left", class: "fa-2x"%>
+      </span>
+    <% end %>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @task.body %>
+      </h1>
+      <h2 class="subtitle">
+        <%= @task.complete %>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Show all Tasks -->
+<section class="section">
+  <div class="box">
+  </div>
+</section>

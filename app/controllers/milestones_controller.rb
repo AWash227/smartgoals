@@ -1,13 +1,15 @@
 class MilestonesController < ApplicationController
     before_action :find_goal
     def new
-        @goal = Goal.find(params[:goal_id])
         @milestone = @goal.milestones.new 
+    end
+
+    def show
+        @milestone = Milestone.find(params[:id])
     end
 
 
     def create
-        @goal = Goal.find(params[:goal_id])
         @milestone = @goal.milestones.create (milestone_params)
 
         if @milestone.save
@@ -18,12 +20,10 @@ class MilestonesController < ApplicationController
     end
 
     def edit
-        @goal = Goal.find(params[:goal_id])
         @milestone = @goal.milestones.find(params[:id])
     end
 
     def update
-        @goal = Goal.find(params[:goal_id])
         @milestone = @goal.milestones.find(params[:id])
         if @milestone.update_attributes(milestone_params)
             redirect_to @goal
@@ -34,7 +34,6 @@ class MilestonesController < ApplicationController
     end
 
     def destroy
-        @goal = Goal.find(params[:goal_id])
         @milestone = @goal.milestones.find(params[:id])
         @milestone.delete
         flash[:success] = "Milestone Deleted!"

@@ -1,14 +1,27 @@
 <article class="media">
   <figure class="media-left">
-      <input type="checkbox">
-
+      <input type="checkbox" class="checkbox">
   </figure>
   <div class="media-content">
     <div class = "content">
       <p>
-        <%= task.body %>
+        <%= link_to task, milestone_id: task.milestone do%>
+          <%= task.body %>
+        <% end %>
       </p>
     </div>
-    <%= render partial: 'tasks/task', collection: task.tasks %>
   </div>
+  <figure class="media-right">
+    <%= link_to edit_milestone_task_path(task.milestone, task) do%>
+      <span class="icon">
+        <%= fa_icon "edit"%>
+      </span>
+    <% end %>
+    <%= link_to milestone_task_path(task.milestone, task), method: :delete do%>
+      <span class="icon">
+        <%= fa_icon "trash"%>
+      </span>
+    <% end %>
+    <span class="tag is-light">6</span>
+  </figure>
 </article>

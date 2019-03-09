@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_204002) do
+ActiveRecord::Schema.define(version: 2019_03_07_230025) do
 
   create_table "goals", force: :cascade do |t|
     t.text "title"
@@ -33,11 +33,13 @@ ActiveRecord::Schema.define(version: 2019_03_04_204002) do
 
   create_table "tasks", force: :cascade do |t|
     t.text "body"
-    t.boolean "complete"
+    t.boolean "complete", default: false
     t.integer "taskable_id"
     t.string "taskable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "milestone_id"
+    t.index ["milestone_id"], name: "index_tasks_on_milestone_id"
   end
 
 end

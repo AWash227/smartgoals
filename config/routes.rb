@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   root 'goals#index'
 
   resources :goals do
-    resources :milestones
+    resources :milestones do
+      resources :tasks
+    end
   end
 
   resources :milestones do 
     resources :tasks
   end
 
-  resources :tasks do
-    resources :tasks
-  end
+  resources :tasks
 
 end
