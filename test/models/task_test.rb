@@ -22,13 +22,5 @@ class TaskTest < ActiveSupport::TestCase
     assert_not @task.valid?
   end
   
-  # Complete Checks
-  test "task complete should default to false" do
-    if @task.complete == 0
-      assert @task.valid?
-    else
-      assert_not @task.valid?
-    end
-  end
 
 end

@@ -1,6 +1,9 @@
 <article class="media">
   <figure class="media-left">
-      <input type="checkbox" class="checkbox">
+    <%= form_for [task.milestone, task] do |f| %>
+      <%= f.hidden_field :body, value: task.body %>
+      <%= f.check_box :complete, class: 'task-submit'%>
+    <% end %>
   </figure>
   <div class="media-content">
     <div class = "content">

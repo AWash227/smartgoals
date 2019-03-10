@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :goals do
     resources :milestones do
-      resources :tasks
+      resources :task
     end
   end
 

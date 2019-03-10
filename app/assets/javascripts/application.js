@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 
+/*
 document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  */
   /*
   // Get all "add-child-task" buttons on page
   const $childTasks = Array.prototype.slice.call(document.querySelectorAll('.add-child-task'), 0);
@@ -58,3 +60,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); */
+
+/*
+$(document).ready(function(){
+  const $taskChecks = Array.prototype.slice.call(document.querySelectorAll('.task-submit'), 0);
+
+  if ($taskChecks.length > 0){
+    $taskChecks.forEach( el => {
+      el.addEventListener('click', () => {
+        $(this).parents('form:first').submit();
+      })
+    })
+  }
+})
+*/
+document.addEventListener("turbolinks:load", function(){
+  
+    $('.task-submit').change(function() {
+        $(this).parents('form:first').submit();
+    });
+
+}); 
