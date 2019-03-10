@@ -10,6 +10,16 @@
                 <div class = "subtitle is-6"><%= goal.title %></div>
                 <div class = "subtitle is-6"><%= goal.due_date %></div>
             </div>
+                <%= link_to edit_goal_path(goal) do %>
+                    <span class="icon">
+                        <%= fa_icon "edit"%>
+                    </span>
+                <% end %>
+                <%= link_to goal_path(goal), method: :delete do %>
+                    <span class="icon">
+                        <%= fa_icon "trash"%>
+                    </span>
+                <% end %>
         </div>
     </div>
 <% end %>

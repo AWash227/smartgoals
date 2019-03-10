@@ -33,6 +33,14 @@ class GoalsController < ApplicationController
         @milestones = @goal.milestones
     end
 
+    def destroy
+        @goal = Goal.find(params[:id])
+        @goal.delete
+        flash[:success] = "Goal Deleted."
+        redirect_to root_url
+
+    end
+
 
     private
 
