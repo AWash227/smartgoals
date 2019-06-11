@@ -1,24 +1,18 @@
-# README
+# Smart Goals
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application to manage, review, and track your progress towards your goals.
 
-Things you may want to cover:
+## Home Page
 
-* Ruby version
+![Smart Goals Homepage](/images/smartgoals-home.png)
 
-* System dependencies
+## Project Page
 
-* Configuration
+![Smart Goals Project Page](/images/smartgoals-project.png)
 
-* Database creation
+## Milestone Page
 
-* Database initialization
+![Smart Goals Milestone Page](/images/smartgoals-milestone.png)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby version
+  - 2.6.0p0 (2018-12-25 revision 66547) [x86_64-linux]
